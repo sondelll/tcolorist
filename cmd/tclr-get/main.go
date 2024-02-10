@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/useful-artifacts/tcolorist/private/libtcolorist"
+	"github.com/sondelll/tcolorist/private/libtcolorist"
 )
 
 func argsCheck() {
@@ -18,11 +18,15 @@ func argsCheck() {
 func main() {
 	argsCheck()
 
+	vault := libtcolorist.GetVault()
+	err := vault.GetColors()
+	if err != nil {
+		panic(err)
+	}
+	os.Exit((0))
+
 	argc := len(os.Args)
 	input := os.Args[argc-1]
-	vault := libtcolorist.GetVault()
-	vault.GetColors()
-	os.Exit((0))
 	clr, err := libtcolorist.ParseColor8Bit(input)
 	if err != nil {
 		panic(err)

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/useful-artifacts/tcolorist/private/libtcolorist"
+	"github.com/sondelll/tcolorist/private/libtcolorist"
 )
 
 func argsCheck() {
