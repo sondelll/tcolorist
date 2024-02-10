@@ -7,17 +7,7 @@ import (
 	"github.com/sondelll/tcolorist/private/libtcolorist"
 )
 
-func argsCheck() {
-	if len(os.Args) < 2 {
-		fmt.Printf("- - tColorist - -\n")
-		fmt.Printf("No arguments provided\n")
-		os.Exit(0)
-	}
-}
-
 func main() {
-	argsCheck()
-
 	vault := libtcolorist.GetVault()
 	err := vault.GetColors()
 	if err != nil {
