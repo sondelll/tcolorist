@@ -23,12 +23,12 @@ func initVault() (*os.File, error) {
 
 	_, dirErr := os.Stat(tcoloristDir)
 	if os.IsNotExist(dirErr) {
-		os.Mkdir(tcoloristDir, 0700)
+		os.Mkdir(tcoloristDir, 0755)
 	}
 
 	_, fileErr := os.Stat(vaultFile)
 	if os.IsNotExist(fileErr) {
-		err := os.WriteFile(tcoloristDir+PSEP+"vault.tclr", []byte(""), 0600)
+		err := os.WriteFile(tcoloristDir+PSEP+"vault.tclr", []byte(""), fs.FileMode(os.O_RDWR))
 		if err != nil {
 			panic(err)
 		}

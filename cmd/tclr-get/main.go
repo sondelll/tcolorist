@@ -16,15 +16,14 @@ func argsCheck() {
 }
 
 func main() {
-	
+	argsCheck()
+
 	vault := libtcolorist.GetVault()
 	err := vault.GetColors()
 	if err != nil {
 		panic(err)
 	}
 	os.Exit((0))
-	
-	argsCheck()
 
 	argc := len(os.Args)
 	input := os.Args[argc-1]
